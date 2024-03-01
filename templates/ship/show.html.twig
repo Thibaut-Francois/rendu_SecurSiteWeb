@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<a href="{{path('app_ship')}}">Back</a>
+
+<h3>Ship name: {{ship.name|raw}}</h3>
+<p>Owner name: {{ship.owner|raw}}</p>
+<p>Ship Brand: {{ship.brand|raw}}</p>
+<p>Ship Registration nb: {{ship.registrationNumber|raw}}</p>
+
+{% if ship.isArmed == 1 %}
+<p>This ship has weapons</p>
+{% else %}
+<p>This ship does not have weapons</p>
+{% endif %}
+
+{% endblock %}
