@@ -1,3 +1,55 @@
+/* @font-face{
+    font-family: 'WhiteRabbit';
+      font-style: normal;
+      font-weight: 400;
+      src: url('./fonts/WhiteRabbit-47pD.ttf');
+    } */
+
+@font-face{
+    font-family: 'Modenine';
+      font-style: normal;
+      font-weight: 400;
+      src: url('./fonts/Modenine-2OPd.ttf');
+    }
+
+
 body {
     background-color: lightgray;
+    font-family: "Modenine";
+}
+
+input{
+    font-family: "Modenine";
+}
+
+button{
+    font-family: "Modenine";
+}
+
+.del_btn{
+    background-color: red;
+    border: none;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.edit_btn{
+    color: black;
+    text-decoration: none;
+    background-color: yellowgreen;
+}
+
+.registration_nb{
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+.oneShip{
+    margin: 10px 0;
+    background-color: rgb(196, 196, 196);
+}
+
+.form_login{
+    display: block;
 }

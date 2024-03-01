@@ -12,20 +12,22 @@
 <h2>-Select your ship-</h2>
 
 {% for ship in ships %}
-    <h3>Name: 
-        <a href="{{path('app_ship_show', {slug:ship.slug})}}">
-        {{ship.name}}
-        </a>
-    </h3>
-    <p>Registration nb: {{ship.registrationNumber|raw}}</p>
+    <div class="oneShip">
+        <h3>Name: 
+            <a href="{{path('app_ship_show', {slug:ship.slug})}}">
+            {{ship.name}}
+            </a>
+        </h3>
+        <p>Registration nb: <span class="registration_nb">{{ship.registrationNumber|raw}}</span></p>
 
-    {% if is_granted('ROLE_ADMIN') %}
-        <form action="{{path('app_ship_delete', {id: ship.id})}}" method="POST">
-            <input type="hidden" name="csrf" value="{{csrf_token('delete'~ship.id)}}">
-            <input type="submit" value="Delete">
-        </form>
+        {% if is_granted('ROLE_ADMIN') %}
+            <form action="{{path('app_ship_delete', {id: ship.id})}}" method="POST">
+                <input type="hidden" name="csrf" value="{{csrf_token('delete'~ship.id)}}">
+                <input class="del_btn" type="submit" value="Delete">
+            </form>
 
-        <a href="{{path('app_ship_update', {slug: ship.slug})}}">Edit</a>
+            <a href="{{path('app_ship_update', {slug: ship.slug})}}" class="edit_btn">Edit</a>
+    </div>
     {% endif %}
     
 {% else %}
